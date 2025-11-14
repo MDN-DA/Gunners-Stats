@@ -1,0 +1,16 @@
+name: Purge Cloudflare Cache
+
+on:
+  deployment_status:
+
+jobs:
+  purge-cache:
+    if: github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge Cloudflare Cache with cURL
+        run: |
+          curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
+            -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --data "{\"purge_everything\":true}"
