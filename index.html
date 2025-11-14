@@ -1,0 +1,131 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- Updated favicon -->
+    <link rel="icon" type="image/svg+xml" href="/Gunners_Stats.svg" />
+    
+    <!-- Updated viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Updated title -->
+    <title>Gunners Stats, Season Tracker 2025/26</title>
+    
+    <!-- Added PWA and mobile meta tags -->
+    <link rel="apple-touch-icon" href="/Gunners_Stats.svg">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#b4191d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Gunners Stats">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              arsenal: ['Oswald', 'sans-serif'],
+              title: ['Zilla Slab', 'serif'],
+            },
+            colors: {
+              'arsenal-red': '#b4191d',
+              'arsenal-red-dark': '#8e1318',
+              'arsenal-gold': '#d4af37',
+              'arsenal-highlight': '#fff5f5',
+              'dark-bg': '#334155',      // slate-700
+              'dark-card': '#475569',    // slate-600
+              'dark-border': '#64748b'   // slate-500
+            },
+            accentColor: {
+              'arsenal-red': '#b4191d',
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Reverted font to Inter, keeping Oswald -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@400;700&family=Zilla+Slab:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/index.css">
+<style>
+  /* Google Translate Widget Styling */
+  #google_translate_element {
+    line-height: 0;
+  }
+  #google_translate_element .goog-te-gadget-simple {
+    background-color: #b4191d !important;
+    border: 1px solid #8e1318 !important;
+    border-radius: 9999px !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 32px !important;
+    height: 32px !important;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  #google_translate_element .goog-te-gadget-simple:hover {
+    transform: scale(1.1);
+  }
+  .dark #google_translate_element .goog-te-gadget-simple {
+    border-color: #d4af37 !important;
+  }
+  #google_translate_element .goog-te-gadget-simple span {
+    display: none !important;
+  }
+  #google_translate_element .goog-te-gadget-simple .goog-te-menu-value {
+    color: white !important;
+    font-size: 1.25rem; /* text-xl */
+    line-height: 1;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .dark #google_translate_element .goog-te-gadget-simple .goog-te-menu-value {
+    color: white !important;
+  }
+  /* Hide the Google Translate banner that appears at the top of the page */
+  body > .skiptranslate {
+    display: none !important;
+  }
+  body {
+    top: 0 !important;
+  }
+  .goog-te-gadget-icon {
+    display: none !important;
+  }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "vite": "https://aistudiocdn.com/vite@^7.2.2",
+    "path": "https://aistudiocdn.com/path@^0.12.7",
+    "recharts": "https://aistudiocdn.com/recharts@^3.4.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "url": "https://aistudiocdn.com/url@^0.11.4",
+    "fs": "https://aistudiocdn.com/fs@^0.0.1-security"
+  }
+}
+</script>
+</head>
+  <!-- Updated body font class to Inter -->
+  <body class="bg-gray-100 dark:bg-dark-bg text-gray-800 dark:text-gray-200 font-['Inter',_sans-serif] transition-colors duration-300">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

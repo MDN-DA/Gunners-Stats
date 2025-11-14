@@ -1,0 +1,29 @@
+# ===================================================================
+# Global Security Headers
+# ===================================================================
+/*
+  # 1. Allow embedding into Notion
+  # This removes the default X-Frame-Options from Cloudflare Pages (by setting it to empty)
+  # and uses the more modern Content-Security-Policy instead.
+  X-Frame-Options:
+  Content-Security-Policy: frame-ancestors 'self' https://*.notion.so https://*.notion.site;
+  
+  # 2. Basic security protection against MIME-type sniffing attacks.
+  X-Content-Type-Options: nosniff
+
+# ===================================================================
+# Aggressive Caching Rules
+# ===================================================================
+
+# Rule for Cloudflare's CDN: NEVER cache HTML files.
+# Every request for a .html file must go to the origin server.
+/*.html
+  Cache-Control: no-cache, must-revalidate, max-age=0
+  Cloudflare-CDN-Cache-Control: no-cache
+
+# Rule for the user's browser: NEVER store these specific files locally.
+# This is critical for forcing Service Worker updates.
+/index.html
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+/service-worker.js
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
